@@ -1,0 +1,21 @@
+<h3>Edit todo with item: {{item.name}}</h3>
+
+<form novalidate #f="ngForm" (submit)="f.valid && save()">
+
+  Name:
+  <input [(ngModel)]="name" name="name" required #nameControl="ngModel" /><br />
+  <div *ngIf="nameControl.invalid" class="invalid">
+    Error in name:<br/>
+    {{nameControl.errors}}
+  </div>
+
+  Assignee:
+  <input [(ngModel)]="assignee" name="assignee" minlength="6" #assigneeControl="ngModel" /><br />
+  <div *ngIf="assigneeControl.invalid" class="invalid">
+    Assignee is too short
+  </div>
+
+  <button type="submit" [disabled]="f.invalid" >Save</button>
+</form>
+
+<button [routerLink]="'/todos'">Back</button>

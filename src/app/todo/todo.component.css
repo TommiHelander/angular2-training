@@ -1,0 +1,7 @@
+.active {
+  background-color: darkorange;
+}
+
+.done {
+  text-decoration: line-through;
+}

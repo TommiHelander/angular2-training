@@ -1,0 +1,9 @@
+<div
+  [class.active]="item.active"
+  [class.done]="item.done"
+  [routerLink]="['/edit/todo', index]"
+  (click)="item.done = !item.done"
+  (mouseenter)="item.active = true"
+  (mouseleave)="item.active = false">
+  {{index}} - {{item.name}} (Assignee: {{item.assignee}}, Done: {{item.done ? 'yes' : 'no'}})
+</div>
